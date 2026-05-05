@@ -148,7 +148,7 @@ app.post('/loginSubmit', async (req, res) => {
 	const validationResult = schema.validate(email);
 	if (validationResult.error != null) {
         console.log(validationResult.error);
-        res.send("/login");
+		res.send("<p>Invalid email.</p><a href='/login'>Try again</a>");
         return;
 	}
 
@@ -157,7 +157,7 @@ app.post('/loginSubmit', async (req, res) => {
 	console.log(result);
 	if (result.length != 1) {
 		console.log("user not found");
-		res.send("<p>Invalid email/password combination.</p><a href='/login'>Try again</a>");
+		res.send("<p>Invalid email.</p><a href='/login'>Try again</a>");
 		return;
 	}
 	if (await bcrypt.compare(password, result[0].password)) {
@@ -171,7 +171,7 @@ app.post('/loginSubmit', async (req, res) => {
 	}
 	else {
 		console.log("incorrect password");
-		res.redirect("/login");
+		res.send("<p>Invalid email/password combination.</p><a href='/login'>Try again</a>");
 		return;
 	}
 })
