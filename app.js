@@ -184,6 +184,7 @@ app.get('/members', (req, res) => {
         </form>
         `;
         res.send(html);
+        return;
     }
     res.redirect('/');
 })
