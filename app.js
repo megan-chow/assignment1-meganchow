@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
     }
     else {
         let html = `
-        <p>Hello, ${req.session.user}</p>
+        <p>Hello, ${req.session.name}</p>
         <form action="/members">
         <button type="submit">Go to Members Area</button>
         </form>
