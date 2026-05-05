@@ -88,6 +88,19 @@ app.post('/signupSubmit', async (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
+    if (!name) {
+        res.send(`<p>Please provide a name.</p><a href='/signup'>Try again</a>`);
+        return;
+    }
+    if (!email) {
+        res.send(`<p>Please provide an email address.</p><a href='/signup'>Try again</a>`);
+        return;
+    }
+    if (!password) {
+        res.send(`<p>Please provide a password.</p><a href='/signup'>Try again</a>`);
+        return;
+    }
+
 	const schema = Joi.object(
 		{
 			name: Joi.string().alphanum().max(20).required(),
