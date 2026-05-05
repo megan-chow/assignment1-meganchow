@@ -13,7 +13,7 @@ const mongoSanitizer = require('mongo-sanitizer').default;
 
 
 const PORT = process.env.PORT || 3000;
-const expireTime = 24 * 60 * 60 * 1000; //expires after 1 day  (hours * minutes * seconds * millis)
+const expireTime = 60 * 60 * 1000; //expires after 1 hour  (minutes * seconds * millis)
 
 /* secret information section */
 const mongodb_host = process.env.MONGODB_HOST;
@@ -144,7 +144,7 @@ app.post('/loginSubmit', async (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
-	const schema = Joi.string().max(40).required();
+	const schema = Joi.string().email().max(40).required();
 	const validationResult = schema.validate(email);
 	if (validationResult.error != null) {
         console.log(validationResult.error);
