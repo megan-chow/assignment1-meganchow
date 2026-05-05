@@ -68,6 +68,7 @@ app.get('/', (req, res) => {
         <button type="submit">Logout</button>
         </form>
         `;
+        res.send(html)
     }
 })
 
