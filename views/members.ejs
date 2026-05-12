@@ -1,0 +1,20 @@
+<%- include("templates/header") %>
+    <h1>Hello, <%= name %>
+    </h1>
+    <div class="container my-4">
+        <div class="row g-3">
+            <div class="col-12 col-sm-4">
+                <img src="/bulbasaur.png" alt="Bulbasaur" class="img-fluid rounded" />
+            </div>
+            <div class="col-12 col-sm-4">
+                <img src="/charmander.png" alt="Charmander" class="img-fluid rounded" />
+            </div>
+            <div class="col-12 col-sm-4">
+                <img src="/squirtle.png" alt="Squirtle" class="img-fluid rounded" />
+            </div>
+        </div>
+    </div>
+    <form action="/logout">
+        <button class="btn btn-secondary rounded-pill px-3" type="submit">Sign out</button>
+    </form>
+    <%- include("templates/footer") %>

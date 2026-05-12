@@ -1,0 +1,11 @@
+<li class="d-flex align-items-center gap-2"> 
+    <%= user.name %> (<%= user.user_type %>)
+        <form action="/promote %>" method="POST">
+            <input type="hidden" name="email" value="<%= user.email %>">
+            <button class="btn btn-danger rounded-pill px-3" type="submit">Promote to Admin</button>
+        </form>
+        <form action="/demote %>" method="POST">
+            <input type="hidden" name="email" value="<%= user.email %>">
+            <button class="btn btn-success rounded-pill px-3" type="submit">Demote to User</button>
+        </form>
+</li>

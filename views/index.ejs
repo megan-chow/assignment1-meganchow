@@ -1,0 +1,20 @@
+<%- include("templates/header") %> 
+    <% if(!authenticated) { %>
+        <form action="/signup">
+        <button class="btn btn-secondary rounded-pill px-3" type="submit">Sign up</button>
+        </form>
+        <br>
+        <form action="/login">
+        <button class="btn btn-secondary rounded-pill px-3" type="submit">Log in</button>
+        </form>
+    <% } else { %>
+        <p>Hello, <%= name %> </p>
+        <form action="/members">
+        <button class="btn btn-secondary rounded-pill px-3" type="submit">Go to Members Area</button>
+        </form>
+        <br>
+        <form action="/logout">
+        <button class="btn btn-secondary rounded-pill px-3" type="submit">Logout</button>
+        </form>
+    <% } %>
+<%- include("templates/footer") %> 
